@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Catalog</h1>
+                        {% if err %}
+                            <p>{{err}}</p>
+                        {% endif %}
+                        <form action="/catalog/" method="POST">
+                            {% csrf_token %} 
+                            <table>
+                                <tr>
+                                <th>Author</th>
+                                <th>Title</th>
+                                <th>Cost</th>
+                                <th>Available</th>
+                                <th>Order</th>
+                                </tr>
+                                    {%for book in books%}
+                                            <tr>
+                                                <td>{{ book.author}}</td>
+                                                <td>{{ book.title}}</td>
+                                                <td>{{ book.price}}</td>
+                                                <td>{{ book.available}}</td>
+                                                <td><input type="checkbox" name="{{book.id}}"></td>
+                                            </tr>
+                                    {% endfor %}        
+                            </table>
+                            <input type="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock content %}

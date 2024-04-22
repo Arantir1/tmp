@@ -1,0 +1,12 @@
+Django==4.2.10
+django-bootstrap-v5==1.0.11
+django-celery-beat==2.6.0
+django-celery-results==2.5.1
+django-debug-toolbar==4.3.0
+django-filter==23.5
+django-redis==5.4.0
+django-timezone-field==6.1.0
+django-tinymce==3.7.1
+djangorestframework==3.14.0
+drf-yasg==1.21.7
+psycopg2-binary==2.9.9
