@@ -18,7 +18,6 @@ jobs:
       name: Build & push Docker image
       with:
         image: repo/image
-        tags: v1, latest
         registry: hub.docker.com
         dockerfile: Dockerfile.ci
         username: ${{ secrets.DOCKER_USERNAME }}
