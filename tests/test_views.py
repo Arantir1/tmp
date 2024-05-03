@@ -21,6 +21,6 @@ class CatalogViewTest(TestCase):
     
     def test_view_catalog_exist(self):
         response = self.client.get("/catalog/")
-        print(response.templates)
+        # print(response.templates)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "catalog.html")
