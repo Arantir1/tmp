@@ -5,7 +5,7 @@ class UserMiddleware:
     def __call__(self, request):
 
         # before view
-        print(dir(request))
+        # print(dir(request))
 
         response = self.get_response(request)
 

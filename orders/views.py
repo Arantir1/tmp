@@ -40,7 +40,6 @@ class LoginView(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def post(self, request, format=None):
-        print(request.data)
         serializer = LoginSerializer(data=self.request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data["user"]
@@ -73,7 +72,7 @@ def logout_page(request):
     return redirect("/login/")
 
 
-@cache_page(60 * 15)
+# @cache_page(60 * 15)
 def catalog(request):
     if request.method == "POST":
         return redirect("/order/")
